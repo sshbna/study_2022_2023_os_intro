@@ -88,22 +88,22 @@ sudo -i
 Обновления
 Обновим все пакеты
 dnf -y update
-
+(рис. [-fig:001])
 ![Обновление пакетов](image/1.png}{#fig:001 width=70%}
 
 Повышение комфорта работы
 Программы для удобства работы в консоли:
 dnf -y install tmux mc
-
-![Программы для удобства работы в консоли](image/2.png}{#fig:001 width=70%}
+(рис. [-fig:002])
+![Программы для удобства работы в консоли](image/2.png}{#fig:002 width=70%}
 
 Автоматическое обновление
 При необходимости можно использовать автоматическое обновление.
 
 Установка программного обеспечения:
 dnf install dnf-automatic
-
-![Установка программного обеспечения](image/3.png}{#fig:001 width=70%}
+(рис. [-fig:003])
+![Установка программного обеспечения](image/3.png}{#fig:003 width=70%}
 
 Зададим необходимую конфигурацию в файле /etc/dnf/automatic.conf.
 Запустим таймер:
@@ -115,8 +115,8 @@ systemctl enable --now dnf-automatic.timer
 SELINUX=enforcing
 на значение
 SELINUX=permissive
-
-![Замена значения](image/4.png}{#fig:001 width=70%}
+(рис. [-fig:004])
+![Замена значения](image/4.png}{#fig:004 width=70%}
 
 Перегрузим виртуальную машину:
 Установка драйверов для VirtualBox
@@ -129,8 +129,8 @@ tmux
 sudo -i
 Установим средства разработки:
 dnf -y group install "Development Tools"
-
-![Установка средств разработки](image/5.png}{#fig:001 width=70%}
+(рис. [-fig:005])
+![Установка средств разработки](image/5.png}{#fig:005 width=70%}
 
 Установим пакет DKMS:
 dnf -y install dkms
@@ -141,8 +141,8 @@ mount /dev/sr0 /media
 /media/VBoxLinuxAdditions.run
 Перегрузим виртуальную машину:
 reboot
-
-![Установка пакета DKMS](image/6.png}{#fig:001 width=70%}
+(рис. [-fig:006])
+![Установка пакета DKMS](image/6.png}{#fig:006 width=70%}
 
 Настройка раскладки клавиатуры
 Войдем в ОС под заданной нами при установке учётной записью.
@@ -155,8 +155,8 @@ touch ~/.config/sway/config.d/95-system-keyboard-config.conf
 exec_always /usr/libexec/sway-systemd/locale1-xkb-config --oneshot
 Переключимся на роль супер-пользователя:
 sudo -i
-
-![Создание файла](image/7.png}{#fig:001 width=70%}
+(рис. [-fig:007])
+![Создание файла](image/7.png}{#fig:007 width=70%}
 
 Отредактируем конфигурационный файл /etc/X11/xorg.conf.d/00-keyboard.conf:
 Section "InputClass"
@@ -167,7 +167,8 @@ Option "XkbLayout" "us,ru"
 Option "XkbVariant" ",winkeys"
 Option "XkbOptions" "grp:rctrl_toggle,compose:ralt,terminate:ctrl_alt_bksp"
 ```
-![Редактирование файла](image/8.png}{#fig:001 width=70%}
+(рис. [-fig:008])
+![Редактирование файла](image/8.png}{#fig:008 width=70%}
 
 Для этого можно использовать файловый менеджер mc и его встроенный редактор.
 Перегрузим виртуальную машину:
@@ -190,8 +191,8 @@ passwd username
 hostnamectl set-hostname username
 Проверим, что имя хоста установлено верно:
 hostnamectl
-
-![Установка имени пользователя и названия хоста](image/9.png}{#fig:001 width=70%}
+(рис. [-fig:009])
+![Установка имени пользователя и названия хоста](image/9.png}{#fig:009 width=70%}
 
 Подключение общей папки
 Внутри виртуальной машины добавим своего пользователя в группу vboxsf (вместо username укажите ваш логин):
@@ -207,8 +208,8 @@ reboot
 tmux
 Переключимся на роль супер-пользователя:
 sudo -i
-
-![Общая папка](image/10.png}{#fig:001 width=70%}
+(рис. [-fig:010])
+![Общая папка](image/10.png}{#fig:010 width=70%}
 
 Работа с языком разметки Markdown
 Средство pandoc для работы с языком разметки Markdown.
@@ -217,14 +218,14 @@ sudo -i
 dnf -y install pandoc
 Для работы с перекрёстными ссылками мы используем пакет pandoc-crossref.
 Лучше установить pandoc и pandoc-crossref вручную.
-
-![Установка pandoc](image/11.png}{#fig:001 width=70%}
+(рис. [-fig:011])
+![Установка pandoc](image/11.png}{#fig:011 width=70%}
  
 texlive
 Установим дистрибутив TeXlive:
 dnf -y install texlive-scheme-ful
-
-![Установка texlive](image/12.png}{#fig:001 width=70%}
+(рис. [-fig:014])
+![Установка texlive](image/14.png}{#fig:014 width=70%}
 
 #Домашнее задание
 
@@ -241,7 +242,7 @@ dmesg | grep -i "то, что ищем"
 Тип файловой системы корневого раздела.
 Последовательность монтирования файловых систем.
 
-![Выполнение команды dmesg](image/12.png}{#fig:001 width=70%}
+![Выполнение команды dmesg](image/14.png}{#fig:014 width=70%}
 
 
 # Выводы
