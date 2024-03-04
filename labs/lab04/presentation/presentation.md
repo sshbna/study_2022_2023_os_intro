@@ -1,7 +1,7 @@
 ---
 ## Front matter
 lang: ru-RU
-title: Структура научной презентации
+title: Презентация по лабораторной работе №4
 subtitle: 
 author:
   - Шубина С.А.
